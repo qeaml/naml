@@ -93,7 +93,7 @@ func (l *lexer) nextName(r rune) (token, error) {
 		if err != nil {
 			return token{tkInvalid, ""}, err
 		}
-		if r == '=' || r == '{' || r == '}' || isWhitespace(r) || isDigit(r) || r == '-' {
+		if r == '=' || r == '{' || r == '}' || isWhitespace(r) {
 			if err := l.r.UnreadRune(); err != nil {
 				return token{tkInvalid, ""}, err
 			}
